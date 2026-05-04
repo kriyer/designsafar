@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Design SAFAR — For the Journey</title>
+  <meta name="description" content="Design advisory for Hospitality environments. Strategic Design. Clear Delivery.">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="shortcut icon" href="favicon.ico">
+  <style>
+    /* ===== FONTS ===== */
+    @font-face {
+      font-family: 'Cormorant Garamond';
+      src: url('fonts/CormorantGaramond-Light.ttf') format('truetype');
+      font-weight: 300;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Cormorant Garamond';
+      src: url('fonts/CormorantGaramond-Regular.ttf') format('truetype');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Cormorant Garamond';
+      src: url('fonts/CormorantGaramond-Italic.ttf') format('truetype');
+      font-weight: 400;
+      font-style: italic;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Cormorant Garamond';
+      src: url('fonts/CormorantGaramond-Medium.ttf') format('truetype');
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Cormorant Garamond';
+      src: url('fonts/CormorantGaramond-SemiBold.ttf') format('truetype');
+      font-weight: 600;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Cormorant Garamond';
+      src: url('fonts/CormorantGaramond-Bold.ttf') format('truetype');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Inter';
+      src: url('fonts/Inter-VariableFont_opsz,wght.ttf') format('truetype');
+      font-weight: 100 900;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Inter';
+      src: url('fonts/Inter-Italic-VariableFont_opsz,wght.ttf') format('truetype');
+      font-weight: 100 900;
+      font-style: italic;
+      font-display: swap;
+    }
+
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: #2D2B28;
+      background-color: #F5F1EB;
+      line-height: 1.7;
+      font-weight: 400;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ===== TYPOGRAPHY ===== */
+    .serif { font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif; }
+    .sans { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; }
+
+    /* ===== COLORS ===== */
+    :root {
+      --cream: #F5F1EB;
+      --cream-dark: #EDE8E0;
+      --charcoal: #2D2B28;
+      --charcoal-light: #3D3B38;
+      --taupe: #B5A89A;
+      --taupe-light: #C8BDB0;
+      --taupe-dark: #8A7E72;
+      --text-body: #4A4743;
+      --text-muted: #8A8680;
+      --accent-line: #C8B9A8;
+      --white: #FFFFFF;
+    }
+
+    /* ===== NAV ===== */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(245, 241, 235, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(200, 185, 168, 0.3);
+      transition: box-shadow 0.3s ease;
+    }
+    .nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.06); }
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+    }
+    .nav-logo img {
+      height: 44px;
+      width: auto;
+      display: block;
+    }
+    .nav-links {
+      display: flex;
+      gap: 40px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-body);
+      transition: color 0.3s ease;
+      position: relative;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--taupe);
+      transition: width 0.3s ease;
+    }
+    .nav-links a:hover { color: var(--charcoal); }
+    .nav-links a:hover::after { width: 100%; }
+
+    /* Mobile hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 8px;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 1.5px;
+      background: var(--charcoal);
+      transition: all 0.3s ease;
+    }
+    .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 4px); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -4px); }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 72px;
+      left: 0;
+      right: 0;
+      background: rgba(245, 241, 235, 0.98);
+      backdrop-filter: blur(12px);
+      padding: 32px 40px;
+      border-bottom: 1px solid rgba(200, 185, 168, 0.3);
+    }
+    .mobile-menu.active { display: block; }
+    .mobile-menu a {
+      display: block;
+      padding: 14px 0;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-body);
+      border-bottom: 1px solid rgba(200, 185, 168, 0.2);
+    }
+    .mobile-menu a:last-child { border-bottom: none; }
+
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 120px 40px 80px;
+      background: var(--cream);
+    }
+    .hero-logo {
+      display: inline-block;
+      text-align: left;
+      margin-bottom: 40px;
+    }
+    .hero-logo .design-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: clamp(22px, 3.2vw, 38px);
+      letter-spacing: 0.08em;
+      color: var(--taupe);
+      margin-bottom: -4px;
+      display: block;
+    }
+    .hero-logo .safar-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-style: normal;
+      font-size: clamp(72px, 13vw, 160px);
+      letter-spacing: 0.18em;
+      color: var(--charcoal);
+      line-height: 1;
+      display: block;
+    }
+    .hero-divider {
+      width: clamp(300px, 50vw, 600px);
+      height: 1px;
+      background: var(--taupe-light);
+      margin: 32px auto;
+    }
+    .hero-tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(11px, 1.1vw, 16px);
+      font-weight: 400;
+      font-style: normal;
+      letter-spacing: 0.5em;
+      text-transform: uppercase;
+      color: var(--taupe-dark);
+      margin-bottom: 48px;
+    }
+    .hero-contact {
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.8;
+    }
+    .hero-contact .name {
+      font-weight: 500;
+      color: var(--text-body);
+    }
+    .hero-contact a { color: var(--taupe-dark); transition: color 0.3s; }
+    .hero-contact a:hover { color: var(--charcoal); }
+
+    /* ===== SECTION SHARED ===== */
+    .section { padding: 100px 40px; }
+    .section-container { max-width: 1200px; margin: 0 auto; }
+    .section-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--taupe-dark);
+      margin-bottom: 8px;
+    }
+    .section-accent-line {
+      width: 60px;
+      height: 2px;
+      background: var(--accent-line);
+      margin-bottom: 48px;
+    }
+
+    /* ===== APPROACH SECTION (Slide 2) ===== */
+    .approach { background: var(--charcoal); color: var(--cream); }
+    .approach .section-label { color: var(--taupe-light); }
+    .approach .section-accent-line { background: var(--taupe); }
+    .approach-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .approach-left h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: clamp(26px, 3vw, 34px);
+      line-height: 1.4;
+      color: var(--cream);
+      margin-bottom: 28px;
+    }
+    .approach-left p {
+      font-size: 15px;
+      line-height: 1.8;
+      color: var(--taupe-light);
+      margin-bottom: 20px;
+    }
+    .approach-left .philosophy {
+      font-style: italic;
+      color: var(--cream-dark);
+      font-size: 15px;
+    }
+    .approach-subtitle {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: clamp(22px, 2.5vw, 28px);
+      color: var(--cream);
+      margin-top: 48px;
+      margin-bottom: 28px;
+    }
+    .approach-pillar { margin-bottom: 24px; }
+    .approach-pillar h4 {
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--cream);
+      margin-bottom: 6px;
+    }
+    .approach-pillar p {
+      font-size: 14px;
+      color: var(--taupe-light);
+      line-height: 1.7;
+    }
+
+    /* Right side — tagline + pillars */
+    .approach-right {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding-top: clamp(60px, 8vw, 110px);
+    }
+    .approach-tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 500;
+      font-size: clamp(22px, 2.8vw, 30px);
+      color: var(--cream);
+      margin-bottom: 28px;
+      line-height: 1.3;
+    }
+    .pillars-container {
+      background: rgba(245, 241, 235, 0.07);
+      border-radius: 24px;
+      padding: 40px;
+    }
+    .pillar-item {
+      padding: 24px 0;
+      border-bottom: 1px solid rgba(200, 185, 168, 0.15);
+    }
+    .pillar-item:last-child { border-bottom: none; }
+    .pillar-keyword {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 500;
+      font-size: 22px;
+      color: var(--cream);
+      margin-bottom: 8px;
+      letter-spacing: 0.04em;
+    }
+    .pillar-lead {
+      font-weight: 600;
+      color: var(--cream-dark);
+      font-size: 14px;
+    }
+    .pillar-desc {
+      font-size: 14px;
+      color: var(--taupe-light);
+      line-height: 1.7;
+    }
+
+    /* ===== SERVICES SECTION (Slide 3) ===== */
+    .services { background: var(--cream); }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      margin-top: 16px;
+    }
+    .service-card {
+      background: var(--white);
+      border-radius: 20px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.06);
+    }
+    .service-image {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+    }
+    .service-content { padding: 32px 28px 36px; }
+    .service-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-size: 24px;
+      letter-spacing: 0.08em;
+      color: var(--taupe-dark);
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .service-list {
+      list-style: none;
+      padding: 0;
+    }
+    .service-list li {
+      font-size: 14px;
+      color: var(--text-body);
+      line-height: 1.7;
+      padding: 8px 0;
+      padding-left: 16px;
+      position: relative;
+      border-bottom: 1px solid rgba(200, 185, 168, 0.15);
+    }
+    .service-list li:last-child { border-bottom: none; }
+    .service-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 16px;
+      width: 4px;
+      height: 4px;
+      background: var(--taupe);
+      border-radius: 50%;
+    }
+
+    /* ===== ABOUT SECTION (Slide 4) ===== */
+    .about { background: var(--cream-dark); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .about-left .brand-logo {
+      margin-bottom: 32px;
+    }
+    .about-left .brand-logo .design-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: 24px;
+      color: var(--taupe);
+      letter-spacing: 0.08em;
+    }
+    .about-left .brand-logo .safar-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-size: 56px;
+      letter-spacing: 0.2em;
+      color: var(--charcoal);
+      line-height: 1;
+    }
+    .pronunciation {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 16px;
+      color: var(--taupe-dark);
+      margin-bottom: 20px;
+    }
+    .about-left p {
+      font-size: 15px;
+      line-height: 1.8;
+      color: var(--text-body);
+      margin-bottom: 20px;
+    }
+    .about-left .bold-text { font-weight: 600; color: var(--charcoal); }
+
+    .about-right {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .kavitha-photo {
+      width: 240px;
+      height: 240px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: 50% 30%;
+      margin-bottom: 28px;
+      border: 4px solid var(--cream);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    }
+    .about-right h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 500;
+      font-size: 32px;
+      color: var(--charcoal);
+      margin-bottom: 20px;
+    }
+    .about-right p {
+      font-size: 14px;
+      line-height: 1.8;
+      color: var(--text-body);
+      text-align: center;
+      max-width: 440px;
+    }
+
+    /* ===== CONTACT SECTION ===== */
+    .contact {
+      background: var(--charcoal);
+      color: var(--cream);
+      padding: 80px 40px;
+    }
+    .contact-container {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .contact h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: clamp(28px, 4vw, 38px);
+      color: var(--cream);
+      margin-bottom: 12px;
+    }
+    .contact .subtitle {
+      font-size: 14px;
+      color: var(--taupe-light);
+      margin-bottom: 40px;
+    }
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      text-align: left;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+    .form-group label {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--taupe-light);
+    }
+    .form-group input,
+    .form-group textarea {
+      background: rgba(245, 241, 235, 0.08);
+      border: 1px solid rgba(200, 185, 168, 0.25);
+      border-radius: 8px;
+      padding: 14px 16px;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      color: var(--cream);
+      outline: none;
+      transition: border-color 0.3s ease;
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: var(--taupe-dark);
+    }
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--taupe);
+    }
+    .form-group textarea { resize: vertical; min-height: 120px; }
+    .submit-btn {
+      align-self: center;
+      background: transparent;
+      border: 1px solid var(--taupe);
+      border-radius: 40px;
+      padding: 14px 48px;
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--cream);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: 12px;
+    }
+    .submit-btn:hover {
+      background: var(--taupe);
+      color: var(--charcoal);
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: var(--charcoal);
+      border-top: 1px solid rgba(200, 185, 168, 0.15);
+      padding: 32px 40px;
+      text-align: center;
+    }
+    .footer p {
+      font-size: 12px;
+      color: var(--taupe-dark);
+      letter-spacing: 0.06em;
+    }
+    .footer a { color: var(--taupe-light); transition: color 0.3s; }
+    .footer a:hover { color: var(--cream); }
+
+    /* ===== RESPONSIVE — TABLET ===== */
+    @media (max-width: 1024px) {
+      .nav-inner { padding: 0 28px; }
+      .section { padding: 72px 28px; }
+      .approach-grid { grid-template-columns: 1fr; gap: 48px; }
+      .services-grid { grid-template-columns: 1fr 1fr; gap: 28px; }
+      .services-grid .service-card:last-child {
+        grid-column: 1 / -1;
+        max-width: 50%;
+        justify-self: center;
+      }
+      .about-grid { grid-template-columns: 1fr; gap: 48px; }
+      .about-right { align-items: flex-start; }
+      .about-right p { text-align: left; }
+      .hero { padding: 100px 28px 64px; }
+    }
+
+    /* ===== RESPONSIVE — MOBILE ===== */
+    @media (max-width: 680px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .nav-inner { height: 64px; padding: 0 20px; }
+      .section { padding: 56px 20px; }
+      .hero {
+        min-height: 90vh;
+        padding: 80px 20px 48px;
+      }
+      .hero-logo .safar-text { letter-spacing: 0.16em; }
+      .hero-divider { width: 120px; margin: 24px auto; }
+      .services-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      .services-grid .service-card:last-child {
+        max-width: 100%;
+      }
+      .service-image { height: 220px; }
+      .form-row { grid-template-columns: 1fr; }
+      .about-left .brand-logo .safar-text { font-size: 40px; }
+      .kavitha-photo { width: 180px; height: 180px; }
+      .pillars-container { padding: 24px; }
+      .approach-grid { gap: 36px; }
+      .mobile-menu { padding: 24px 20px; }
+      .contact { padding: 56px 20px; }
+    }
+
+    /* ===== ANIMATIONS ===== */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">
+        <img src="images/SAFAR-transparent-logo.png" alt="Design SAFAR">
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#approach">Approach</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#about">About</a>
+      <a href="#approach">Approach</a>
+      <a href="#contact">Contact Us</a>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="hero">
+    <div class="hero-logo fade-up">
+      <div class="design-text">Design</div>
+      <div class="safar-text">SAFAR</div>
+    </div>
+    <div class="hero-divider fade-up"></div>
+    <p class="hero-tagline fade-up">For the Journey</p>
+    <div class="hero-contact fade-up">
+      <p class="name">Kavitha Iyer &nbsp;&middot;&nbsp; Washington, DC</p>
+      <p>404.791.4305 &nbsp;|&nbsp; <a href="mailto:kavitha@designsafar.com">kavitha@designsafar.com</a></p>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="section about" id="about">
+    <div class="section-container">
+      <div class="section-label fade-up">About</div>
+      <div class="section-accent-line fade-up"></div>
+      <div class="about-grid">
+        <div class="about-left fade-up">
+          <div class="brand-logo">
+            <div class="design-text">Design</div>
+            <div class="safar-text">SAFAR</div>
+          </div>
+          <p class="pronunciation">[suh-<strong>fahr</strong>]/ s&#x259;&#x2C8;f&#x251;r</p>
+          <p>SAFAR means journey, the pursuit of discovery, connection, and meaning.<br>
+          A service to support <span class="bold-text">your Design Journey.</span></p>
+          <p>At the center of every journey is Hospitality: the meeting point of host, guest, and place. Design SAFAR helps owners and development teams shape that meeting point, bringing strategy and experience together to create places of distinction, relevance, and long-term value.</p>
+          <p>We are committed to delivering <span class="bold-text">exceptional Hospitality environments.</span></p>
+          <p>Design SAFAR brings the insight of Hospitality at its best, paired with the perspective of a trusted advisor. Led by Kavitha Iyer, we offer current intelligence on guest expectations, design shifts, materials, furnishings, and fabrication, translating that knowledge into relevant solutions with creativity.</p>
+        </div>
+        <div class="about-right fade-up">
+          <img src="images/kavitha-iyer.jpg" alt="Kavitha Iyer" class="kavitha-photo">
+          <h3>Kavitha Iyer</h3>
+          <p>Kavitha Iyer is an artist, architect, and brand strategist who shapes environments with clarity, purpose, and care. She believes design should elevate human experience while creating lasting value for brands and owners. With more than two decades of leadership across leading hospitality organizations, she brings a rare ability to align guest connection, brand intent, and commercial performance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== APPROACH ===== -->
+  <section class="section approach" id="approach">
+    <div class="section-container">
+      <div class="approach-grid">
+        <div class="approach-left">
+          <div class="section-label fade-up" style="color:var(--taupe-light)">Design SAFAR</div>
+          <div class="section-accent-line fade-up" style="background:var(--taupe)"></div>
+          <h2 class="fade-up">Design advisory for Hospitality environments</h2>
+          <p class="fade-up">We advise across every phase of development to shape places with depth, direction, and lasting impact. Grounded in listening, clarity, and purpose, we help navigate complexity, uncover high-value opportunities, and simplify the process.</p>
+          <p class="philosophy fade-up">The SAFAR philosophy rests on disciplined decision-making to deliver an exceptional journey, for your guests, for you.</p>
+          <h3 class="approach-subtitle fade-up">Our Approach</h3>
+          <div class="approach-pillar fade-up">
+            <h4>Thoughtful Partnership</h4>
+            <p>We work alongside clients to understand ambition, constraints, and opportunity.</p>
+          </div>
+          <div class="approach-pillar fade-up">
+            <h4>Disciplined Collaboration</h4>
+            <p>We sharpen alignment of design, operations, and business goals to support stronger outcomes.</p>
+          </div>
+          <div class="approach-pillar fade-up">
+            <h4>Sustained Relevance</h4>
+            <p>We help deliver spaces that endure, adapt, and deliver value well beyond opening.</p>
+          </div>
+        </div>
+        <div class="approach-right fade-up">
+          <div class="approach-tagline">Strategic Design. Clear Delivery.</div>
+          <div class="pillars-container">
+            <div class="pillar-item">
+              <div class="pillar-keyword">Clarity</div>
+              <p class="pillar-desc"><span class="pillar-lead">Start early. Build smarter.</span> SAFAR helps shape key decisions during the &ldquo;Deal&rdquo; phase to plan upfront and avoid costly rework.</p>
+            </div>
+            <div class="pillar-item">
+              <div class="pillar-keyword">Cohesive</div>
+              <p class="pillar-desc"><span class="pillar-lead">Design well. Perform better.</span> Thoughtful direction creates stronger budgets, better cost alignment, and fewer surprises in execution.</p>
+            </div>
+            <div class="pillar-item">
+              <div class="pillar-keyword">Confident</div>
+              <p class="pillar-desc"><span class="pillar-lead">Align clearly. Deliver smoothly.</span> Our approach strengthens coordination across teams for a more effective process and better long-term results.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES ===== -->
+  <section class="section services" id="services">
+    <div class="section-container">
+      <div class="section-label fade-up">Services</div>
+      <div class="section-accent-line fade-up"></div>
+      <div class="services-grid">
+        <!-- Early Clarity -->
+        <div class="service-card fade-up">
+          <img src="images/early-clarity.jpg" alt="Early Clarity — strategic planning session" class="service-image">
+          <div class="service-content">
+            <h3 class="service-title">Early Clarity</h3>
+            <ul class="service-list">
+              <li>Project feasibility analysis for site planning, phasing plan, and space planning.</li>
+              <li>Brand suitability overview.</li>
+              <li>Scope assessment, PIPs and phasing.</li>
+              <li>Creative direction, narratives and conceptual design.</li>
+              <li>Holistic cost estimation to build and operate.</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Cohesive Process -->
+        <div class="service-card fade-up">
+          <img src="images/cohesive-process.jpg" alt="Cohesive Process — architectural blueprints" class="service-image">
+          <div class="service-content">
+            <h3 class="service-title">Cohesive Process</h3>
+            <ul class="service-list">
+              <li>Engagement across Architecture, interiors, sub-consultant, procurement and construction teams.</li>
+              <li>Liaison to streamline reviews between Brand, Hotel management and consultants.</li>
+              <li>Refining designs at each phase with a focus on budget discipline and value.</li>
+              <li>Materials, finish, and fabrication insights to ensure durability and cost effectiveness.</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Market Confident -->
+        <div class="service-card fade-up">
+          <img src="images/market-confident.jpg" alt="Market Confident — hospitality environment" class="service-image">
+          <div class="service-content">
+            <h3 class="service-title">Market Confident</h3>
+            <ul class="service-list">
+              <li>Advisor on local competition and differentiation recommendations.</li>
+              <li>Brand design partnerships to develop property specific collateral development.</li>
+              <li>Pre-opening set up inclusive of staging, styling, and accessorizing.</li>
+              <li>Photoshoot direction and art coordination.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="contact" id="contact">
+    <div class="contact-container">
+      <h2 class="fade-up">Contact Us</h2>
+      <p class="subtitle fade-up">We'd love to hear about your project. Fill out the form below and we'll be in touch.</p>
+      <form class="contact-form fade-up" id="contactForm" method="POST" action="https://api.web3forms.com/submit">
+        <input type="hidden" name="access_key" value="330f6cbd-9ad1-40fe-925d-bba78239515b">
+        <input type="hidden" name="subject" value="New Design SAFAR Contact Request">
+        <input type="hidden" name="redirect" value="https://web3forms.com/success">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" name="firstName" placeholder="First name" required>
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" name="lastName" placeholder="Last name" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" placeholder="(123) 456-7890">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Tell us about your project..." required></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Send Request</button>
+      </form>
+      <div id="formSuccess" style="display:none; margin-top:32px;">
+        <p style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:22px; color:var(--cream);">Thank you. We'll be in touch soon.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <p>&copy; 2026 Design SAFAR &nbsp;&middot;&nbsp; <a href="mailto:kavitha@designsafar.com">kavitha@designsafar.com</a> &nbsp;&middot;&nbsp; 404.791.4305</p>
+  </footer>
+
+  <script>
+    // Navbar scroll effect
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    // Mobile menu toggle
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      mobileMenu.classList.toggle('active');
+    });
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        mobileMenu.classList.remove('active');
+      });
+    });
+
+    // Scroll-triggered fade-in
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    // Contact form handler — sends via Web3Forms
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      var btn = document.querySelector('.submit-btn');
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+
+      var formData = new FormData(this);
+
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData
+      })
+      .then(function(res) { return res.json(); })
+      .then(function(data) {
+        if (data.success) {
+          document.getElementById('contactForm').style.display = 'none';
+          document.getElementById('formSuccess').style.display = 'block';
+        } else {
+          btn.textContent = 'Send Request';
+          btn.disabled = false;
+          alert('Something went wrong. Please email us directly at kavitha@designsafar.com');
+        }
+      })
+      .catch(function() {
+        btn.textContent = 'Send Request';
+        btn.disabled = false;
+        alert('Something went wrong. Please email us directly at kavitha@designsafar.com');
+      });
+    });
+  </script>
+</body>
+</html>
