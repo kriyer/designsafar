@@ -1,0 +1,1329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Art SAFAR — Original Works</title>
+  <meta name="description" content="Art SAFAR — Original artworks, florals, ink studies, and botanical works.">
+
+  <!-- ===== OPEN GRAPH (Social Sharing) ===== -->
+  <meta property="og:title" content="Art SAFAR — Original Works">
+  <meta property="og:description" content="Original artworks, florals, ink studies, and botanical works.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.designsafar.com/art-safar">
+  <meta property="og:image" content="https://www.designsafar.com/images/SAFAR-kambikolam-socialpreview1280x640.png">
+  <meta property="og:image:width" content="1280">
+  <meta property="og:image:height" content="640">
+  <meta property="og:site_name" content="Design SAFAR">
+
+  <!-- ===== TWITTER / X CARD ===== -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Art SAFAR — Original Works">
+  <meta name="twitter:description" content="Original artworks, florals, ink studies, and botanical works.">
+  <meta name="twitter:image" content="https://www.designsafar.com/images/SAFAR-kambikolam-socialpreview1280x640.png">
+
+  <!-- ===== FAVICONS ===== -->
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="shortcut icon" href="favicon.ico">
+  <style>
+    /* ===== FONTS ===== */
+    @font-face {
+      font-family: 'Cormorant Garamond';
+      src: url('fonts/CormorantGaramond-Light.ttf') format('truetype');
+      font-weight: 300;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Cormorant Garamond';
+      src: url('fonts/CormorantGaramond-Regular.ttf') format('truetype');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Cormorant Garamond';
+      src: url('fonts/CormorantGaramond-Italic.ttf') format('truetype');
+      font-weight: 400;
+      font-style: italic;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Cormorant Garamond';
+      src: url('fonts/CormorantGaramond-Medium.ttf') format('truetype');
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Cormorant Garamond';
+      src: url('fonts/CormorantGaramond-SemiBold.ttf') format('truetype');
+      font-weight: 600;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Cormorant Garamond';
+      src: url('fonts/CormorantGaramond-Bold.ttf') format('truetype');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Inter';
+      src: url('fonts/Inter-VariableFont_opsz,wght.ttf') format('truetype');
+      font-weight: 100 900;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Inter';
+      src: url('fonts/Inter-Italic-VariableFont_opsz,wght.ttf') format('truetype');
+      font-weight: 100 900;
+      font-style: italic;
+      font-display: swap;
+    }
+
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: #2D2B28;
+      background-color: #F5F1EB;
+      line-height: 1.7;
+      font-weight: 400;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ===== COLORS ===== */
+    :root {
+      --cream: #F5F1EB;
+      --cream-dark: #EDE8E0;
+      --charcoal: #2D2B28;
+      --charcoal-light: #3D3B38;
+      --taupe: #B5A89A;
+      --taupe-light: #C8BDB0;
+      --taupe-dark: #8A7E72;
+      --text-body: #4A4743;
+      --text-muted: #8A8680;
+      --accent-line: #C8B9A8;
+      --white: #FFFFFF;
+      --rose: #C8A49A;
+    }
+
+    /* ===== NAV ===== */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(245, 241, 235, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(200, 185, 168, 0.3);
+      transition: box-shadow 0.3s ease;
+    }
+    .nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.06); }
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo { display: flex; align-items: center; }
+    .nav-logo img { height: 44px; width: auto; display: block; }
+    .nav-links {
+      display: flex;
+      gap: 40px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-body);
+      transition: color 0.3s ease;
+      position: relative;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--taupe);
+      transition: width 0.3s ease;
+    }
+    .nav-links a:hover { color: var(--charcoal); }
+    .nav-links a:hover::after { width: 100%; }
+    .nav-links a.active { color: var(--charcoal); }
+    .nav-links a.active::after { width: 100%; }
+
+    /* Mobile hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 8px;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 1.5px;
+      background: var(--charcoal);
+      transition: all 0.3s ease;
+    }
+    .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 4px); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -4px); }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 72px;
+      left: 0;
+      right: 0;
+      background: rgba(245, 241, 235, 0.98);
+      backdrop-filter: blur(12px);
+      padding: 32px 40px;
+      border-bottom: 1px solid rgba(200, 185, 168, 0.3);
+    }
+    .mobile-menu.active { display: block; }
+    .mobile-menu a {
+      display: block;
+      padding: 14px 0;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      color: var(--text-body);
+      border-bottom: 1px solid rgba(200, 185, 168, 0.2);
+    }
+    .mobile-menu a:last-child { border-bottom: none; }
+    .mobile-menu a.active { color: var(--charcoal); font-weight: 500; }
+
+    /* ===== PAGE HEADER (Art SAFAR brand banner) ===== */
+    .page-header {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 120px 40px 80px;
+      background: var(--cream);
+    }
+    .hero-logo {
+      display: inline-block;
+      text-align: left;
+    }
+    .hero-logo .art-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: clamp(22px, 3.2vw, 38px);
+      letter-spacing: 0.18em;
+      color: var(--taupe);
+      margin-bottom: -4px;
+      display: block;
+    }
+    .hero-logo .safar-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-style: normal;
+      font-size: clamp(72px, 13vw, 160px);
+      letter-spacing: 0.18em;
+      color: var(--charcoal);
+      line-height: 1;
+      display: block;
+    }
+
+    /* ===== INTRO ===== */
+    .intro {
+      padding: 48px 40px;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .intro h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(22px, 3vw, 30px);
+      font-weight: 300;
+      color: var(--charcoal);
+      margin-bottom: 20px;
+      letter-spacing: 1px;
+    }
+    .intro h2 em {
+      font-style: italic;
+      color: var(--rose);
+    }
+    .intro p {
+      color: var(--text-body);
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    /* ===== FILTERS ===== */
+    .filters {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      padding: 32px 20px;
+      flex-wrap: wrap;
+      border-top: 1px solid var(--accent-line);
+      border-bottom: 1px solid var(--accent-line);
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .filter-btn {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      background: none;
+      border: none;
+      border-bottom: 2px solid transparent;
+      padding: 8px 0;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .filter-btn:hover { color: var(--charcoal); }
+    .filter-btn.active {
+      color: var(--charcoal);
+      border-bottom-color: var(--charcoal);
+    }
+
+    /* ===== GALLERY GRID ===== */
+    .gallery {
+      padding: 48px 40px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 24px;
+    }
+    .gallery-card {
+      position: relative;
+      cursor: pointer;
+    }
+    .gallery-card-image {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1;
+      overflow: hidden;
+      background-color: var(--cream-dark);
+      border-radius: 8px;
+    }
+    .gallery-card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transition: transform 0.4s ease;
+    }
+    .gallery-card:hover .gallery-card-image img {
+      transform: scale(1.04);
+    }
+    .piece-number {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 6px 10px;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--charcoal);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: 10;
+      border-radius: 4px;
+    }
+    .gallery-card:hover .piece-number { opacity: 1; }
+    .gallery-card-info { padding: 16px 4px; }
+    .gallery-card-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--charcoal);
+      margin-bottom: 4px;
+      line-height: 1.3;
+    }
+    .gallery-card-medium {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+    .gallery-card-price {
+      font-size: 14px;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    /* ===== LIGHTBOX ===== */
+    .lightbox-overlay {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: rgba(45, 43, 40, 0.75);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+    }
+    .lightbox-overlay.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+    .lightbox-content {
+      background-color: white;
+      max-width: 900px;
+      width: 90%;
+      max-height: 85vh;
+      border-radius: 8px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      overflow: hidden;
+      transform: scale(0.95);
+      transition: transform 0.3s ease;
+      box-shadow: 0 10px 50px rgba(0,0,0,0.2);
+      position: relative;
+    }
+    .lightbox-overlay.active .lightbox-content { transform: scale(1); }
+    .lightbox-image {
+      background-color: var(--cream-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .lightbox-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    .lightbox-info {
+      padding: 36px;
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+    }
+    .lightbox-close {
+      position: absolute;
+      top: -40px;
+      right: -40px;
+      width: 36px;
+      height: 36px;
+      background-color: rgba(255,255,255,0.1);
+      border: none;
+      color: white;
+      font-size: 20px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: background-color 0.3s ease;
+      z-index: 1001;
+    }
+    .lightbox-close:hover { background-color: rgba(255,255,255,0.2); }
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(255,255,255,0.1);
+      color: white;
+      border: none;
+      width: 40px;
+      height: 40px;
+      font-size: 18px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.3s ease;
+      z-index: 1001;
+      border-radius: 50%;
+    }
+    .lightbox-nav:hover { background-color: rgba(255,255,255,0.2); }
+    .lightbox-nav.prev { left: 16px; }
+    .lightbox-nav.next { right: 16px; }
+    .lightbox-info h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 24px;
+      color: var(--charcoal);
+      margin-bottom: 6px;
+      line-height: 1.2;
+    }
+    .lightbox-medium {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+    .lightbox-category {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--taupe-dark);
+      margin-bottom: 20px;
+    }
+    .lightbox-price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px;
+      font-weight: 400;
+      color: var(--charcoal);
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--accent-line);
+    }
+    .lightbox-description {
+      color: var(--text-body);
+      font-size: 14px;
+      line-height: 1.7;
+      margin-bottom: 28px;
+      flex-grow: 1;
+    }
+    .lightbox-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .btn {
+      padding: 14px;
+      border: none;
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-align: center;
+      border-radius: 40px;
+    }
+    .btn-primary {
+      background-color: var(--charcoal);
+      color: white;
+    }
+    .btn-primary:hover { background-color: var(--charcoal-light); }
+    .btn-secondary {
+      background-color: transparent;
+      color: var(--charcoal);
+      border: 1px solid var(--charcoal);
+    }
+    .btn-secondary:hover {
+      background-color: var(--charcoal);
+      color: white;
+    }
+
+    /* ===== PRODUCT DETAIL MODAL ===== */
+    .modal-overlay {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: white;
+      z-index: 2000;
+      overflow-y: auto;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+    }
+    .modal-overlay.active { opacity: 1; pointer-events: all; }
+    .modal-close {
+      position: fixed;
+      top: 24px;
+      right: 24px;
+      background-color: var(--charcoal);
+      color: white;
+      border: none;
+      width: 40px;
+      height: 40px;
+      font-size: 20px;
+      cursor: pointer;
+      z-index: 2001;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.3s ease;
+    }
+    .modal-close:hover { background-color: var(--taupe-dark); }
+    .modal-content {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 48px;
+      padding: 60px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    .modal-image {
+      background-color: var(--cream-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 500px;
+      border-radius: 8px;
+    }
+    .modal-image img { width: 100%; height: 100%; object-fit: contain; }
+    .modal-sidebar { padding: 24px 0; }
+    .modal-sidebar h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px;
+      color: var(--charcoal);
+      margin-bottom: 6px;
+      line-height: 1.2;
+    }
+    .modal-sidebar-medium {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+    .modal-details {
+      background-color: #fafaf8;
+      padding: 20px;
+      margin-bottom: 24px;
+      border-radius: 8px;
+    }
+    .detail-row { margin-bottom: 12px; font-size: 14px; }
+    .detail-row:last-child { margin-bottom: 0; }
+    .detail-label {
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 11px;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+    .detail-value { color: var(--text-body); }
+    .modal-price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 32px;
+      font-weight: 400;
+      color: var(--charcoal);
+      margin-bottom: 24px;
+      padding-bottom: 24px;
+      border-bottom: 2px solid var(--accent-line);
+    }
+    .modal-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    .modal-note {
+      color: var(--text-muted);
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      padding: 16px;
+      background-color: #fafaf8;
+      border-left: 2px solid var(--accent-line);
+      border-radius: 0 8px 8px 0;
+    }
+    .modal-links {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding-top: 20px;
+      border-top: 1px solid var(--accent-line);
+    }
+    .modal-link {
+      color: var(--charcoal);
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    .modal-link:hover { color: var(--rose); }
+
+    /* ===== INQUIRY BADGE & PANEL ===== */
+    .inquiry-badge {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 56px;
+      height: 56px;
+      background-color: var(--charcoal);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 18px;
+      cursor: pointer;
+      z-index: 500;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      border: none;
+    }
+    .inquiry-badge:hover { background-color: var(--taupe-dark); transform: scale(1.1); }
+    .inquiry-badge.hidden { display: none; }
+    .inquiry-panel {
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      width: 350px;
+      max-height: 600px;
+      background-color: white;
+      z-index: 501;
+      box-shadow: -2px 0 15px rgba(0,0,0,0.15);
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      border-radius: 8px 8px 0 0;
+    }
+    .inquiry-panel.active { transform: translateX(0); }
+    .inquiry-panel-header {
+      padding: 20px;
+      border-bottom: 1px solid var(--accent-line);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .inquiry-panel-header h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      color: var(--charcoal);
+    }
+    .inquiry-panel-close { background: none; border: none; font-size: 24px; cursor: pointer; color: var(--text-muted); }
+    .inquiry-panel-list { overflow-y: auto; flex-grow: 1; padding: 16px; }
+    .inquiry-item {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 12px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--accent-line);
+    }
+    .inquiry-item:last-child { border-bottom: none; }
+    .inquiry-item-image {
+      width: 56px;
+      height: 56px;
+      background-color: var(--cream-dark);
+      border-radius: 4px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .inquiry-item-image img { width: 100%; height: 100%; object-fit: cover; }
+    .inquiry-item-info { flex-grow: 1; }
+    .inquiry-item-title { font-size: 13px; color: var(--charcoal); margin-bottom: 4px; line-height: 1.3; }
+    .inquiry-item-price { font-size: 13px; color: var(--text-muted); margin-bottom: 6px; }
+    .inquiry-item-remove {
+      background: none;
+      border: none;
+      color: var(--rose);
+      font-size: 11px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+    .inquiry-item-remove:hover { color: var(--charcoal); }
+    .inquiry-panel-footer {
+      padding: 20px;
+      border-top: 1px solid var(--accent-line);
+    }
+    .inquiry-total {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 12px;
+      font-weight: 600;
+      color: var(--charcoal);
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: var(--charcoal);
+      border-top: 1px solid rgba(200, 185, 168, 0.15);
+      padding: 32px 40px;
+      text-align: center;
+    }
+    .footer p {
+      font-size: 12px;
+      color: var(--taupe-dark);
+      letter-spacing: 0.06em;
+    }
+    .footer a { color: var(--taupe-light); transition: color 0.3s; }
+    .footer a:hover { color: var(--cream); }
+
+    /* ===== ANIMATIONS ===== */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1024px) {
+      .nav-inner { padding: 0 28px; }
+      .page-header { padding: 100px 28px 64px; }
+      .intro { padding: 36px 28px; }
+      .gallery { padding: 36px 28px; }
+    }
+    @media (max-width: 900px) {
+      .lightbox-content { grid-template-columns: 1fr; }
+      .lightbox-image { min-height: 300px; }
+      .modal-content { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 680px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .nav-inner { height: 64px; padding: 0 20px; }
+      .mobile-menu {
+        top: 64px;
+        padding: 20px;
+        width: 100%;
+      }
+      .mobile-menu a {
+        font-size: 15px;
+        letter-spacing: 0.08em;
+        padding: 16px 0;
+      }
+      .page-header {
+        padding: 80px 20px 48px;
+        min-height: 60vh;
+      }
+      .hero-logo .safar-text { letter-spacing: 0.16em; }
+      .intro { padding: 28px 20px; }
+      .gallery { padding: 28px 16px; }
+      .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 16px;
+      }
+      .filters { padding: 20px 16px; gap: 12px; }
+      .filter-btn { font-size: 11px; padding: 6px 0; }
+      .modal-content { padding: 24px 16px; gap: 20px; }
+      .modal-close { top: 12px; right: 12px; width: 36px; height: 36px; font-size: 18px; }
+      .inquiry-panel { width: 100%; }
+      .inquiry-badge { width: 48px; height: 48px; font-size: 16px; }
+    }
+
+    /* ===== ACCESSIBILITY ===== */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      white-space: nowrap;
+      border-width: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="images/SAFAR-transparent-logo.png" alt="Design SAFAR">
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#approach">Approach</a></li>
+        <li><a href="art-safar.html" class="active">Art SAFAR</a></li>
+        <li><a href="index.html#contact">Contact Us</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html#about">About</a>
+      <a href="index.html#approach">Approach</a>
+      <a href="art-safar.html" class="active">Art SAFAR</a>
+      <a href="index.html#contact">Contact Us</a>
+    </div>
+  </nav>
+
+  <!-- ===== PAGE HEADER (Art SAFAR Brand Banner) ===== -->
+  <header class="page-header">
+    <div class="hero-logo fade-up">
+      <div class="art-text">Art</div>
+      <div class="safar-text">SAFAR</div>
+    </div>
+  </header>
+
+  <!-- ===== INTRO ===== -->
+  <section class="intro fade-up">
+    <h2>The Collection &mdash; <em>Original Works</em></h2>
+    <p>Art that travels inward.
+
+Art SAFAR is a study in stillness, memory, and place. Each piece begins as a quiet conversation between hand, brush, pigment, and canvas, where gesture becomes composition and feeling finds form.
+
+Personal snapshots of the natural world, these works carry the energy of a moment, translated through memory, feeling, and place.
+
+If a piece stays with you, send me a note. </p>
+  </section>
+
+  <!-- ===== FILTERS ===== -->
+  <div class="filters fade-up">
+    <button class="filter-btn active" data-filter="all">All Works</button>
+    <button class="filter-btn" data-filter="Floral Study">Floral Study</button>
+    <button class="filter-btn" data-filter="Ink Study">Ink Study</button>
+    <button class="filter-btn" data-filter="Botanical">Botanical</button>
+    <button class="filter-btn" data-filter="Abstract">Abstract</button>
+    <button class="filter-btn" data-filter="Landscape">Landscape</button>
+    <button class="filter-btn" data-filter="Collection">Collection</button>
+  </div>
+
+  <!-- ===== GALLERY ===== -->
+  <section class="gallery">
+    <div class="gallery-grid fade-up" id="galleryGrid"></div>
+  </section>
+
+  <!-- ===== LIGHTBOX ===== -->
+  <div class="lightbox-overlay" id="lightbox">
+    <button class="lightbox-nav prev" id="prevBtn" aria-label="Previous artwork">&lt;</button>
+    <div class="lightbox-content">
+      <div class="lightbox-image">
+        <img id="lightboxImage" src="" alt="">
+      </div>
+      <div class="lightbox-info">
+        <h3 id="lightboxTitle"></h3>
+        <div class="lightbox-medium" id="lightboxMedium"></div>
+        <div class="lightbox-category" id="lightboxCategory"></div>
+        <div class="lightbox-price" id="lightboxPrice"></div>
+        <p class="lightbox-description" id="lightboxDescription"></p>
+        <div class="lightbox-actions">
+          <button class="btn btn-primary" id="viewFullBtn">View Full Size</button>
+          <button class="btn btn-secondary" id="inquireBtn">Inquire</button>
+        </div>
+      </div>
+      <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+    </div>
+    <button class="lightbox-nav next" id="nextBtn" aria-label="Next artwork">&gt;</button>
+  </div>
+
+  <!-- ===== PRODUCT DETAIL MODAL ===== -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-content">
+      <div class="modal-image">
+        <img id="modalImage" src="" alt="">
+      </div>
+      <div class="modal-sidebar">
+        <h2 id="modalTitle"></h2>
+        <div class="modal-sidebar-medium" id="modalMedium"></div>
+        <div class="modal-details">
+          <div class="detail-row">
+            <div class="detail-label">Dimensions</div>
+            <div class="detail-value">Available upon request</div>
+          </div>
+        </div>
+        <div class="modal-price" id="modalPrice"></div>
+        <div class="modal-actions">
+          <button class="btn btn-primary" id="addInquiryBtn">Add to Inquiry List</button>
+        </div>
+        <div class="modal-note">
+          <strong>Original &mdash; One of a Kind</strong><br>
+          Complimentary white-glove shipping within the US
+        </div>
+        <div class="modal-links">
+          <a href="mailto:kavitha@designsafar.com?subject=Custom Commission Inquiry" class="modal-link">Request Custom Commission</a>
+        </div>
+      </div>
+    </div>
+    <button class="modal-close" id="modalClose" aria-label="Close">&times;</button>
+  </div>
+
+  <!-- ===== INQUIRY BADGE & PANEL ===== -->
+  <button class="inquiry-badge hidden" id="inquiryBadge" aria-label="View inquiry list">
+    <span id="inquiryCount">0</span>
+  </button>
+  <div class="inquiry-panel" id="inquiryPanel">
+    <div class="inquiry-panel-header">
+      <h3>Inquiry List</h3>
+      <button class="inquiry-panel-close" id="inquiryPanelClose" aria-label="Close panel">&times;</button>
+    </div>
+    <div class="inquiry-panel-list" id="inquiryList"></div>
+    <div class="inquiry-panel-footer">
+      <div class="inquiry-total">
+        <span>Total:</span>
+        <span id="inquiryTotal">$0</span>
+      </div>
+      <button class="btn btn-primary" id="sendInquiryBtn" style="width: 100%;">Send Inquiry</button>
+    </div>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <p>&copy; 2026 Design SAFAR &nbsp;&middot;&nbsp; <a href="mailto:kavitha@designsafar.com">kavitha@designsafar.com</a> &nbsp;&middot;&nbsp; 404.791.4305</p>
+  </footer>
+
+  <script>
+    // Base path for Art images (relative to this file's location)
+    const ART_BASE = 'Art/';
+
+    // Navbar scroll effect
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    // Mobile menu toggle
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      mobileMenu.classList.toggle('active');
+    });
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        mobileMenu.classList.remove('active');
+      });
+    });
+
+    // Scroll-triggered fade-in
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    // ===== GALLERY DATA =====
+    const artworks = [
+      { id: 1, basename: "IMG_0020", title: "Patchwork Garden", medium: "Mixed Media on Paper", category: "Abstract", price: "$380", fullRes: "IMG_0020.JPEG", description: "A vibrant composition of interlocking botanical forms, each pattern thoughtfully placed to create visual rhythm and depth." },
+      { id: 2, basename: "IMG_0249", title: "Magnolia Ink I", medium: "Ink Wash on Paper", category: "Ink Study", price: "$520", fullRes: "IMG_0249.JPEG", description: "Loose, gestural strokes capture the delicate weight of magnolia petals suspended in space." },
+      { id: 3, basename: "IMG_0279", title: "Wild Meadow", medium: "Acrylic on Paper", category: "Floral Study", price: "$680", fullRes: "IMG_0279.JPEG", description: "An expressive celebration of untamed flora, where color and movement dance across the composition." },
+      { id: 4, basename: "IMG_0391", title: "Teal Dot Bloom", medium: "Acrylic on Canvas", category: "Abstract", price: "$450", fullRes: "IMG_0391.JPEG", description: "Geometric and organic forms intersect, creating a contemporary study in color harmony and negative space." },
+      { id: 5, basename: "IMG_0401", title: "Violet Bouquet", medium: "Watercolor on Paper", category: "Floral Study", price: "$340", fullRes: "IMG_0401.JPEG", description: "Soft washes of violet and sage build a delicate arrangement, capturing the ephemeral beauty of cut flowers." },
+      { id: 6, basename: "IMG_0875", title: "Rose Garden Relief", medium: "Gouache on Toned Paper", category: "Floral Study", price: "$560", fullRes: "IMG_0875.JPEG", description: "Layered gouache creates dimension and texture, revealing roses in various stages of bloom." },
+      { id: 7, basename: "IMG_0878", title: "Coneflower Dream", medium: "Watercolor & Gouache", category: "Floral Study", price: "$420", fullRes: "IMG_0878.JPEG", description: "A lyrical interpretation of prairie wildflowers, rendered in flowing watercolor and opaque highlights." },
+      { id: 9, basename: "IMG_0913", title: "Wildflower Dusk", medium: "Watercolor on Paper", category: "Floral Study", price: "$470", fullRes: "IMG_0913.JPEG", description: "Warm golden tones fade into cool purples, capturing the color palette of evening light on wildflowers." },
+      { id: 10, basename: "IMG_0915", title: "Indigo Meadow", medium: "Watercolor on Paper", category: "Floral Study", price: "$490", fullRes: "IMG_0915.JPEG", description: "Rich indigo blooms rise from paper, their forms suggested rather than defined, creating a sense of movement." },
+      { id: 11, basename: "IMG_0954", title: "Orchid Cascade", medium: "Oil on Canvas (Diptych)", category: "Floral Study", price: "$1,250", fullRes: "IMG_0954.JPEG", description: "A dramatic two-panel composition where cascading orchids flow across canvas in oil and rich pigment." },
+      { id: 12, basename: "IMG_1476", title: "Ink Silhouette I", medium: "Ink on Linen", category: "Ink Study", price: "$380", fullRes: "IMG_1476.JPEG", description: "A bold exploration of negative space, where a single inked form creates presence through absence." },
+      { id: 13, basename: "IMG_1477", title: "Cerulean Bloom", medium: "Acrylic on Canvas", category: "Floral Study", price: "$520", fullRes: "IMG_1477.JPEG", description: "Deep cerulean grounds support delicate floral gestures, creating a serene and contemplative mood." },
+      { id: 14, basename: "IMG_1478", title: "Amber Daisies", medium: "Watercolor on Paper", category: "Floral Study", price: "$360", fullRes: "IMG_1478.JPEG", description: "Warm amber and cream tones celebrate the simple geometry and cheerful presence of daisy blooms." },
+      { id: 15, basename: "IMG_1479", title: "Purple Petal Rain", medium: "Watercolor on Paper", category: "Floral Study", price: "$360", fullRes: "IMG_1479.JPEG", description: "Cascading purple petals dissolve into watercolor washes, evoking the fleeting moment of bloom." },
+      { id: 16, basename: "IMG_1612", title: "Lily Mist", medium: "Watercolor on Paper", category: "Floral Study", price: "$440", fullRes: "IMG_1612.JPEG", description: "Lily forms emerge from soft veils of color, where precision and suggestion create visual intrigue." },
+      { id: 17, basename: "IMG_3227", title: "Honeysuckle Bower", medium: "Watercolor & Gouache", category: "Floral Study", price: "$580", fullRes: "IMG_3227.JPEG", description: "Honeysuckle vines wind through paper, their flowers rendered in delicate washes of pink and cream." },
+      { id: 18, basename: "IMG_3643", title: "Cascading Fern", medium: "Watercolor on Paper", category: "Botanical", price: "$420", fullRes: "IMG_3643.JPEG", description: "The intricate unfurling of fern fronds becomes a study in green and movement." },
+      { id: 19, basename: "IMG_3644", title: "Autumn Frond", medium: "Sepia Ink on Paper", category: "Botanical", price: "$390", fullRes: "IMG_3644.JPEG", description: "Sepia ink captures the delicate structure of autumn foliage in a timeless, contemplative study." },
+      { id: 20, basename: "IMG_3676", title: "Studio Wall — Florals", medium: "Watercolor Series", category: "Collection", price: "$2,200", fullRes: "IMG_3676.JPEG", description: "A curated series of watercolor studies displayed in dialogue, celebrating the variety of botanical forms." },
+      { id: 21, basename: "IMG_5352", title: "Butterfly Rain", medium: "Mixed Media on Canvas", category: "Landscape", price: "$780", fullRes: "IMG_5352.JPEG", description: "Butterflies seem to drift across a landscape of color and light, capturing movement and stillness." },
+      { id: 22, basename: "IMG_5871", title: "Rose & Violet Sketch", medium: "Watercolor & Graphite", category: "Floral Study", price: "$320", fullRes: "IMG_5871.JPEG", description: "Loose graphite lines meet flowing watercolor, balancing structure and intuition." },
+      { id: 23, basename: "IMG_5992", title: "Pink Daisy Grid", medium: "Watercolor Studies on Paper", category: "Botanical", price: "$480", fullRes: "IMG_5992.JPEG", description: "A systematic exploration of daisy forms in various states, arranged in a grid to reveal subtle variations." },
+      { id: 24, basename: "IMG_6255", title: "The Collection — Overview", medium: "Mixed Media Series", category: "Collection", price: "$4,500", fullRes: "IMG_6255.JPEG", description: "An expansive mixed-media series that showcases the full spectrum of SAFAR’s floral and abstract investigations." },
+      { id: 25, basename: "IMG_6347", title: "Clematis Garden", medium: "Watercolor on Paper", category: "Floral Study", price: "$460", fullRes: "IMG_6347.JPEG", description: "Clematis vines weave through watercolor layers, their star-shaped flowers rendered in purples and whites." },
+      { id: 26, basename: "IMG_6668", title: "Wisteria Twilight", medium: "Watercolor & Ink", category: "Floral Study", price: "$520", fullRes: "IMG_6668.JPEG", description: "Wisteria blooms hang like rain in this atmospheric study of color and form at dusk." },
+      { id: 27, basename: "IMG_8244", title: "Sunlit Poppies", medium: "Watercolor on Paper", category: "Floral Study", price: "$440", fullRes: "IMG_8244.JPEG", description: "Poppies glow with warm light, their translucent petals celebrating the passage of sunlight." },
+      { id: 28, basename: "IMG_8298", title: "Starburst Bloom", medium: "Ink & Watercolor", category: "Ink Study", price: "$480", fullRes: "IMG_8298.JPEG", description: "A radiant bloom explodes across paper, where ink lines create structure for watercolor color fields." },
+      { id: 29, basename: "IMG_8300", title: "Botanical Light", medium: "Watercolor on Paper", category: "Botanical", price: "$380", fullRes: "IMG_8300.JPEG", description: "Delicate plant forms are illuminated from within, suggesting growth and vitality." },
+      { id: 30, basename: "IMG_8346", title: "Summer Cascade", medium: "Mixed Media on Paper", category: "Floral Study", price: "$560", fullRes: "IMG_8346.JPEG", description: "Summer blooms tumble and cascade across paper in a joyful exploration of abundance and color." },
+      { id: 31, basename: "IMG_8369", title: "Autumn Wildflowers", medium: "Mixed Media on Paper", category: "Floral Study", price: "$520", fullRes: "IMG_8369.JPEG", description: "Russet and gold tones celebrate the richness of autumn wildflower season." },
+      { id: 32, basename: "IMG_8380", title: "Soft Peony", medium: "Watercolor on Paper", category: "Floral Study", price: "$380", fullRes: "IMG_8380.JPEG", description: "Peony petals unfold in layers, rendered in soft washes of pink and cream." },
+      { id: 33, basename: "IMG_9200", title: "Ember Bloom", medium: "Watercolor on Paper", category: "Abstract", price: "$340", fullRes: "IMG_9200.JPEG", description: "Warm embers of color float across paper, creating an abstract interpretation of floral energy." },
+      { id: 34, basename: "IMG_9201", title: "Tropical Canopy", medium: "Watercolor & Resist", category: "Botanical", price: "$380", fullRes: "IMG_9201.JPEG", description: "Resist techniques reveal layers of tropical foliage, creating visual depth and complexity." },
+      { id: 35, basename: "IMG_9203", title: "Violet Nocturne", medium: "Watercolor on Paper", category: "Abstract", price: "$360", fullRes: "IMG_9203.JPEG", description: "Deep purples and blues create a nocturnal mood, suggesting emotion through abstraction." },
+      { id: 36, basename: "IMG_9203-1", title: "Violet Nocturne II", medium: "Watercolor on Paper", category: "Abstract", price: "$360", fullRes: "IMG_9203-1.JPEG", description: "A continuation of the nocturnal series, exploring variations in purple and blues." },
+      { id: 37, basename: "IMG_9228", title: "Crimson Petals", medium: "Watercolor on Paper", category: "Floral Study", price: "$420", fullRes: "IMG_9228.JPEG", description: "Crimson flowers dominate this warm composition, their bold color commanding attention." },
+      { id: 38, basename: "IMG_9420", title: "Daisy Fields Diptych", medium: "Acrylic on Paper", category: "Floral Study", price: "$950", fullRes: "IMG_9420.JPEG", description: "A two-panel study of daisy fields, united in vision but explored through varied color palettes." },
+      { id: 39, basename: "IMG_9511", title: "Indigo Canopy", medium: "Ink Wash on Paper", category: "Ink Study", price: "$480", fullRes: "IMG_9511.JPEG", description: "A dense canopy rendered in indigo washes, creating a sense of forest depth and mystery." },
+      { id: 40, basename: "IMG_9783", title: "Still Life Deconstructed", medium: "Mixed Media on Canvas", category: "Abstract", price: "$720", fullRes: "IMG_9783.JPEG", description: "Traditional still life elements dissolve into abstract forms, celebrating the essence over representation." },
+      { id: 41, basename: "IMG_9865", title: "Sumi Blossom I", medium: "Sumi Ink on Paper", category: "Ink Study", price: "$460", fullRes: "IMG_9865.JPEG", description: "Sumi ink techniques create a meditative study of a single blossom, where less is more." },
+      { id: 42, basename: "IMG_9866", title: "Sumi Blossom II", medium: "Sumi Ink on Paper", category: "Ink Study", price: "$460", fullRes: "IMG_9866.JPEG", description: "A companion to Sumi Blossom I, exploring different applications of traditional ink techniques." },
+      { id: 43, basename: "IMG_9880", title: "Mountain Path", medium: "Gouache on Toned Paper", category: "Landscape", price: "$580", fullRes: "IMG_9880.JPEG", description: "A winding path through mountains, rendered in gouache with both precision and atmosphere." },
+      { id: 44, basename: "IMG_9992", title: "Frost Flower", medium: "Watercolor & White Ink", category: "Floral Study", price: "$440", fullRes: "IMG_9992.JPEG", description: "White ink adds crystalline detail to soft watercolor forms, suggesting frost and delicacy." },
+      { id: 47, basename: "6195D6ED-7765-47BA-BC85-3CD1E142667C", title: "Lavender Haze", medium: "Acrylic on Canvas", category: "Floral Study", price: "$650", fullRes: "6195D6ED-7765-47BA-BC85-3CD1E142667C.jpg", description: "Acrylic layers create a hazy field of lavender, evoking the dreamlike quality of a lavender meadow." },
+      { id: 48, basename: "E17EA6F7-D884-40C3-B78B-B2782A820267", title: "Daisy & Rose Illustration", medium: "Pen & Watercolor", category: "Botanical", price: "$480", fullRes: "E17EA6F7-D884-40C3-B78B-B2782A820267.png", description: "Botanical illustration meets contemporary art in this detailed study of daisy and rose forms." },
+      { id: 49, basename: "EB4BCF8B-EDA1-42F4-8858-3FA3D4A326C7", title: "Cornflower Fields", medium: "Acrylic on Canvas", category: "Floral Study", price: "$560", fullRes: "EB4BCF8B-EDA1-42F4-8858-3FA3D4A326C7.jpg", description: "Vibrant cornflower blues dominate this landscape-oriented celebration of meadow abundance." },
+      { id: 50, basename: "FC0BD6F8-6013-48C1-B952-77FB222D1C6F", title: "Golden Hour Bouquet", medium: "Oil & Acrylic on Canvas", category: "Floral Study", price: "$880", fullRes: "FC0BD6F8-6013-48C1-B952-77FB222D1C6F.jpg", description: "Oil and acrylic blend to capture the warm, golden light of late afternoon on a fresh bouquet." },
+      { id: 51, basename: "A1193C56-921C-45AB-B415-7C4737356444", title: "Vine & Bloom", medium: "Watercolor on Paper", category: "Floral Study", price: "$480", fullRes: "A1193C56-921C-45AB-B415-7C4737356444.jpg", description: "Flowing vines adorned with pink and blue watercolor blooms cascade across a light ground, balancing delicacy with organic movement." },
+      { id: 52, basename: "Abstract-florals001", title: "Abstract Florals I", medium: "Mixed Media on Paper", category: "Abstract", price: "$520", fullRes: "Abstract-florals001.jpg", description: "Bold ink lines intersect with pastel washes of color, creating an energetic and contemporary exploration of floral abstraction." },
+      { id: 53, basename: "B604276C-EB01-4E2D-85EF-1C6F4B887A97", title: "Night Blooms", medium: "Gouache on Dark Paper", category: "Floral Study", price: "$620", fullRes: "B604276C-EB01-4E2D-85EF-1C6F4B887A97.JPEG", description: "White flowers emerge luminously against a deep dark background, their forms rendered in opaque gouache with striking contrast." },
+      { id: 54, basename: "IMG_4063", title: "Rainbow Sketch", medium: "Ink & Watercolor", category: "Botanical", price: "$360", fullRes: "IMG_4063.JPEG", description: "Delicate ink line drawings of leaves and flowers float over a soft rainbow watercolor wash, celebrating simplicity and color." },
+      { id: 55, basename: "IMG_8474", title: "Pastel Impasto", medium: "Acrylic on Canvas", category: "Abstract", price: "$740", fullRes: "IMG_8474.JPEG", description: "Thick layers of pastel pink, purple, green, and cream build a richly textured abstract surface, inviting touch and contemplation." },
+      { id: 56, basename: "RenderedImage", title: "Horizon Study", medium: "Mixed Media on Paper", category: "Landscape", price: "$560", fullRes: "RenderedImage.JPEG", description: "A textured landscape of blue-gray sky meeting earthy tones below, evoking vast open space through layered mixed media techniques." },
+      { id: 57, basename: "IMG_0060", title: "Copper Vine Tapestry", medium: "Gouache & Ink on Paper", category: "Botanical", price: "$620", fullRes: "IMG_0060.jpg", description: "Copper-toned leaves weave through a tapestry of green vine work and blue accents, evoking the intricate beauty of Art Nouveau botanical illustration." },
+      { id: 58, basename: "IMG_0083", title: "Midnight Peonies", medium: "Gouache on Toned Paper", category: "Floral Study", price: "$580", fullRes: "IMG_0083.jpg", description: "Lush peonies in blush and lavender emerge from a deep teal ground, their layered petals rendered with bold, confident brushwork." },
+      { id: 59, basename: "IMG_0084", title: "Wisteria & Rose", medium: "Watercolor on Paper", category: "Floral Study", price: "$540", fullRes: "IMG_0084.jpg", description: "Cascading wisteria in silvery lavender drapes over soft pink roses, creating a dreamy, layered composition in muted tones." },
+      { id: 60, basename: "IMG_0123", title: "Ribbon Landscape", medium: "Mixed Media Collage", category: "Abstract", price: "$480", fullRes: "IMG_0123.jpg", description: "Torn watercolor strips are woven into undulating ribbons across a textured ground, merging landscape and pattern in playful collage." },
+      { id: 61, basename: "IMG_0130", title: "Silver Anemone", medium: "Watercolor on Paper", category: "Floral Study", price: "$420", fullRes: "IMG_0130.jpg", description: "Silvery-blue anemones bloom in soft profusion across the page, their forms dissolving into a mist of cool watercolor washes." },
+      { id: 62, basename: "IMG_0183", title: "Hydrangea & Pine", medium: "Watercolor on Paper", category: "Botanical", price: "$460", fullRes: "IMG_0183.jpg", description: "Clusters of watercolor hydrangea blend with radiating pine needles in warm earth tones, celebrating the harmony of garden and forest." },
+      { id: 63, basename: "IMG_0199", title: "Rose & Cosmos Nocturne", medium: "Gouache on Paper", category: "Floral Study", price: "$560", fullRes: "IMG_0199.jpg", description: "Roses in warm terra cotta and cosmos in cool slate are rendered in bold gouache against a dusky blue-green ground." },
+      { id: 64, basename: "IMG_0230", title: "Green Light", medium: "Watercolor on Paper", category: "Botanical", price: "$440", fullRes: "IMG_0230.jpg", description: "White leaf silhouettes float within luminous green watercolor fields, creating an airy study of light filtering through foliage." },
+      { id: 65, basename: "IMG_0370", title: "Spool & Thread", medium: "Gouache on Kraft Paper", category: "Abstract", price: "$340", fullRes: "IMG_0370.jpg", description: "Delicate white hourglass forms and fine lines repeat across warm kraft paper, evoking the quiet rhythm of textile craft." },
+      { id: 66, basename: "IMG_0719", title: "Blue Rain Garden", medium: "Ink & Watercolor", category: "Floral Study", price: "$520", fullRes: "IMG_0719.jpg", description: "Vivid cobalt blooms with dripping ink stems stand against a misty ground, where floral beauty meets expressive spontaneity." },
+      { id: 67, basename: "IMG_0833", title: "Color Block Studies", medium: "Watercolor on Paper", category: "Abstract", price: "$680", fullRes: "IMG_0833.jpg", description: "A grid of eight watercolor studies explores color harmony through soft-edged rectangular forms, each panel a distinct tonal meditation." },
+      { id: 68, basename: "IMG_0861", title: "Confetti Mosaic", medium: "Watercolor on Paper", category: "Abstract", price: "$520", fullRes: "IMG_0861.jpg", description: "Vibrant watercolor squares scatter and cluster in a joyful mosaic, building rhythm through color variation and playful arrangement." },
+      { id: 69, basename: "IMG_5136", title: "Coral Thicket", medium: "Ink & Watercolor", category: "Abstract", price: "$580", fullRes: "IMG_5136.jpg", description: "A dense, energetic tangle of red and blue ink lines creates an organic thicket, evoking the vibrant chaos of coral reef or forest undergrowth." },
+      { id: 70, basename: "IMG_6408", title: "Autumn Thistle", medium: "Ink & Watercolor", category: "Botanical", price: "$480", fullRes: "IMG_6408.jpg", description: "Delicate white ink lines trace feathery thistle forms over warm earth-toned watercolor washes, capturing autumn's fading elegance." },
+      { id: 71, basename: "IMG_8282", title: "Amber Poppies", medium: "Watercolor & Ink", category: "Floral Study", price: "$440", fullRes: "IMG_8282.jpg", description: "Poppies in warm amber and charcoal rise on slender stems, their translucent petals rendered with loose, expressive brushwork." },
+      { id: 72, basename: "IMG_8290", title: "Gestural Bloom", medium: "Ink & Watercolor", category: "Ink Study", price: "$460", fullRes: "IMG_8290.jpg", description: "Continuous ink lines trace the outlines of flowers over warm watercolor washes, balancing control and spontaneity in a single gesture." },
+      { id: 73, basename: "IMG_8308", title: "Leaf & Color Grid", medium: "Mixed Media on Paper", category: "Abstract", price: "$520", fullRes: "IMG_8308.jpg", description: "Ink-drawn leaves and hatched fans overlay a patchwork of vivid color blocks, merging botanical observation with abstract composition." },
+      { id: 74, basename: "IMG_8312", title: "Blue Iris Trio", medium: "Ink & Watercolor", category: "Floral Study", price: "$420", fullRes: "IMG_8312.jpg", description: "Three blue irises sway on dark stems, their petals rendered in translucent washes of lavender and cobalt with fine ink outlines." },
+      { id: 75, basename: "IMG_9339", title: "Wildflower Glow", medium: "Ink & Gouache", category: "Floral Study", price: "$480", fullRes: "IMG_9339.jpg", description: "White and dark ink line drawings of wildflowers bloom over warm ochre and teal gouache washes, creating depth through layering." },
+      { id: 76, basename: "IMG_9548", title: "Ink Rhythm", medium: "Ink on Paper", category: "Ink Study", price: "$560", fullRes: "IMG_9548.jpg", description: "Bold black ink forms with fine radiating lines create a striking high-contrast composition of organic rhythm and geometric precision." },
+      { id: 77, basename: "IMG_9780", title: "Ink Current", medium: "Ink on Paper", category: "Ink Study", price: "$520", fullRes: "IMG_9780.jpeg", description: "Flowing black ink ribbons interlace with delicate hatched forms, creating a dynamic sense of movement and current across the page." },
+      { id: 78, basename: "IMG_9367", title: "Blue Cascade", medium: "Acrylic on Canvas", category: "Abstract", price: "$680", fullRes: "IMG_9367.jpeg", description: "Layers of cerulean, cobalt, and white build a luminous, textured surface that shimmers like light on water." },
+      { id: 79, basename: "Love language", title: "Love Language", medium: "Ink on Paper", category: "Ink Study", price: "$560", fullRes: "Love language.jpeg", description: "A bold, intricate ink form spirals outward with organic, labyrinthine lines — a meditative exploration of connection and continuity." },
+    ];
+
+    // ===== STATE =====
+    let currentFilter = 'all';
+    let currentLightboxIndex = -1;
+    let inquiryList = [];
+
+    // ===== INIT =====
+    function init() {
+      renderGallery();
+      setupEventListeners();
+    }
+
+    // ===== RENDER GALLERY =====
+    let renderBatchId = 0;
+    function renderGallery() {
+      const gallery = document.getElementById('galleryGrid');
+      gallery.innerHTML = '';
+      const filtered = currentFilter === 'all' ? artworks : artworks.filter(art => art.category === currentFilter);
+      const BATCH = 12;
+      const batchId = ++renderBatchId;
+      function renderBatch(start) {
+        if (batchId !== renderBatchId) return; // cancelled by new filter
+        const end = Math.min(start + BATCH, filtered.length);
+        for (let i = start; i < end; i++) {
+          gallery.appendChild(createArtCard(filtered[i]));
+        }
+        if (end < filtered.length) {
+          requestAnimationFrame(() => renderBatch(end));
+        }
+      }
+      renderBatch(0);
+    }
+
+    function createArtCard(art) {
+      const card = document.createElement('div');
+      card.className = 'gallery-card';
+      const thumbSrc = ART_BASE + 'Florals/thumbs/' + art.basename + '.jpg';
+      card.innerHTML = `
+        <div class="gallery-card-image">
+          <img src="${thumbSrc}" alt="${art.title}" loading="lazy"
+            onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22400%22%3E%3Crect fill=%22%23EDE8E0%22 width=%22400%22 height=%22400%22/%3E%3C/svg%3E'">
+          <div class="piece-number">#${art.id}</div>
+        </div>
+        <div class="gallery-card-info">
+          <div class="gallery-card-title">${art.title}</div>
+          <div class="gallery-card-medium">${art.medium}</div>
+          <div class="gallery-card-price">${art.price}</div>
+        </div>`;
+      card.addEventListener('click', () => openLightbox(getFilteredIndex(art.id)));
+      return card;
+    }
+
+    function getFilteredIndex(artId) {
+      const filtered = currentFilter === 'all' ? artworks : artworks.filter(art => art.category === currentFilter);
+      return filtered.findIndex(art => art.id === artId);
+    }
+
+    // ===== LIGHTBOX =====
+    function openLightbox(index) {
+      const filtered = currentFilter === 'all' ? artworks : artworks.filter(art => art.category === currentFilter);
+      currentLightboxIndex = index;
+      updateLightbox(filtered[index]);
+      document.getElementById('lightbox').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+      document.body.style.overflow = '';
+      currentLightboxIndex = -1;
+    }
+
+    function updateLightbox(art) {
+      const mediumSrc = ART_BASE + 'Florals/medium/' + art.basename + '.jpg';
+      document.getElementById('lightboxImage').src = mediumSrc;
+      document.getElementById('lightboxTitle').textContent = art.title;
+      document.getElementById('lightboxMedium').textContent = art.medium;
+      document.getElementById('lightboxCategory').textContent = art.category;
+      document.getElementById('lightboxPrice').textContent = art.price;
+      document.getElementById('lightboxDescription').textContent = art.description;
+      document.getElementById('viewFullBtn').dataset.artId = art.id;
+      document.getElementById('inquireBtn').dataset.artEmail = 'kavitha@designsafar.com?subject=Inquiry: ' + art.title;
+    }
+
+    function navigateLightbox(direction) {
+      const filtered = currentFilter === 'all' ? artworks : artworks.filter(art => art.category === currentFilter);
+      let newIndex = currentLightboxIndex + direction;
+      if (newIndex >= filtered.length) newIndex = 0;
+      if (newIndex < 0) newIndex = filtered.length - 1;
+      currentLightboxIndex = newIndex;
+      updateLightbox(filtered[newIndex]);
+    }
+
+    // ===== MODAL =====
+    function openModal(artId) {
+      const art = artworks.find(a => a.id === artId);
+      if (!art) return;
+      const modalSrc = ART_BASE + 'Florals/' + art.fullRes;
+      document.getElementById('modalImage').src = modalSrc;
+      document.getElementById('modalTitle').textContent = art.title;
+      document.getElementById('modalMedium').textContent = art.medium;
+      document.getElementById('modalPrice').textContent = art.price;
+      document.getElementById('addInquiryBtn').dataset.artId = artId;
+      closeLightbox();
+      document.getElementById('modalOverlay').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      document.getElementById('modalOverlay').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    // ===== INQUIRY LIST =====
+    function addToInquiry(artId) {
+      const art = artworks.find(a => a.id === artId);
+      if (!art || inquiryList.some(item => item.id === artId)) return;
+      inquiryList.push(art);
+      updateInquiryUI();
+      closeModal();
+    }
+
+    function removeFromInquiry(artId) {
+      inquiryList = inquiryList.filter(item => item.id !== artId);
+      updateInquiryUI();
+    }
+
+    function updateInquiryUI() {
+      const badge = document.getElementById('inquiryBadge');
+      const count = document.getElementById('inquiryCount');
+      const listContainer = document.getElementById('inquiryList');
+      count.textContent = inquiryList.length;
+      badge.classList.toggle('hidden', inquiryList.length === 0);
+
+      listContainer.innerHTML = inquiryList.map(art => {
+        const inqThumb = ART_BASE + 'Florals/thumbs/' + art.basename + '.jpg';
+        return `
+          <div class="inquiry-item">
+            <div class="inquiry-item-image">
+              <img src="${inqThumb}" alt="${art.title}"
+                onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2260%22 height=%2260%22%3E%3Crect fill=%22%23EDE8E0%22 width=%2260%22 height=%2260%22/%3E%3C/svg%3E'">
+            </div>
+            <div class="inquiry-item-info">
+              <div class="inquiry-item-title">${art.title}</div>
+              <div class="inquiry-item-price">${art.price}</div>
+              <button class="inquiry-item-remove" data-art-id="${art.id}">Remove</button>
+            </div>
+          </div>`;
+      }).join('');
+
+      document.querySelectorAll('.inquiry-item-remove').forEach(btn => {
+        btn.addEventListener('click', (e) => removeFromInquiry(parseInt(e.target.dataset.artId)));
+      });
+
+      const total = inquiryList.reduce((sum, art) => sum + parseInt(art.price.replace(/[$,]/g, '')), 0);
+      document.getElementById('inquiryTotal').textContent = '$' + total.toLocaleString();
+    }
+
+    // ===== EVENT LISTENERS =====
+    function setupEventListeners() {
+      // Filters
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+          e.target.classList.add('active');
+          currentFilter = e.target.dataset.filter;
+          renderGallery();
+        });
+      });
+
+      // Lightbox
+      document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+      document.getElementById('prevBtn').addEventListener('click', () => navigateLightbox(-1));
+      document.getElementById('nextBtn').addEventListener('click', () => navigateLightbox(1));
+      document.getElementById('lightbox').addEventListener('click', (e) => {
+        if (e.target === document.getElementById('lightbox')) closeLightbox();
+      });
+
+      // Keyboard
+      document.addEventListener('keydown', (e) => {
+        if (document.getElementById('lightbox').classList.contains('active')) {
+          if (e.key === 'Escape') closeLightbox();
+          if (e.key === 'ArrowLeft') navigateLightbox(-1);
+          if (e.key === 'ArrowRight') navigateLightbox(1);
+        }
+        if (document.getElementById('modalOverlay').classList.contains('active')) {
+          if (e.key === 'Escape') closeModal();
+        }
+      });
+
+      // View Full
+      document.getElementById('viewFullBtn').addEventListener('click', (e) => {
+        openModal(parseInt(e.target.dataset.artId));
+      });
+
+      // Inquire
+      document.getElementById('inquireBtn').addEventListener('click', () => {
+        const artId = parseInt(document.getElementById('viewFullBtn').dataset.artId);
+        const art = artworks.find(a => a.id === artId);
+        if (art) window.location.href = 'mailto:kavitha@designsafar.com?subject=Inquiry: ' + art.title;
+      });
+
+      // Modal
+      document.getElementById('modalClose').addEventListener('click', closeModal);
+      document.getElementById('modalOverlay').addEventListener('click', (e) => {
+        if (e.target === document.getElementById('modalOverlay')) closeModal();
+      });
+
+      // Add to Inquiry
+      document.getElementById('addInquiryBtn').addEventListener('click', (e) => {
+        addToInquiry(parseInt(e.target.dataset.artId));
+      });
+
+      // Inquiry Badge and Panel
+      document.getElementById('inquiryBadge').addEventListener('click', () => {
+        document.getElementById('inquiryPanel').classList.toggle('active');
+      });
+      document.getElementById('inquiryPanelClose').addEventListener('click', () => {
+        document.getElementById('inquiryPanel').classList.remove('active');
+      });
+
+      // Send Inquiry
+      document.getElementById('sendInquiryBtn').addEventListener('click', () => {
+        if (inquiryList.length === 0) return;
+        const subject = 'Art Inquiry from SAFAR Gallery';
+        const body = inquiryList.map(art => art.title + ' - ' + art.price).join('\n');
+        window.location.href = 'mailto:kavitha@designsafar.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+      });
+
+    }
+
+    init();
+  </script>
+</body>
+</html>
