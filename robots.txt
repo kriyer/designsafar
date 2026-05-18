@@ -1,0 +1,6 @@
+# Design SAFAR — robots.txt
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://www.designsafar.com/sitemap.xml
