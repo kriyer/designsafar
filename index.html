@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Design SAFAR — For the Journey</title>
-  <meta name="description" content="Design SAFAR is a hospitality design advisory led by Kavitha Iyer in Washington, DC. Strategic interior design, FF&E procurement, and project management for hotels, restaurants, and commercial spaces.">
-  <meta name="keywords" content="hospitality design, interior design advisory, hotel design, restaurant design, FF&E, Washington DC, Design SAFAR, Kavitha Iyer">
+  <title>Design SAFAR — Hospitality Design & Development Advisory | Hotel Design Consultant</title>
+  <meta name="description" content="Design SAFAR is a hospitality design and development advisory led by Kavitha Iyer in Washington, DC. Early hospitality planning, CAPEX and PIP advisory, FF&E procurement, hotel and restaurant interior design consulting, feasibility analysis, and project management for owners and developers.">
+  <meta name="keywords" content="hospitality design consultant, hospitality development advisory, hotel design consultant, early hospitality planning, hospitality design advisory, CAPEX planning hospitality, PIP advisory hotel, FF&E procurement consultant, restaurant design consultant, hotel interior design, hospitality feasibility analysis, property improvement plan consultant, hotel repositioning, resort design advisory, commercial interior design, Washington DC hospitality design, Design SAFAR, Kavitha Iyer, hospitality owner representative, hotel development consultant">
   <link rel="canonical" href="https://www.designsafar.com/">
 
   <!-- ===== OPEN GRAPH (Social Sharing) ===== -->
-  <meta property="og:title" content="Design SAFAR — For the Journey">
-  <meta property="og:description" content="Hospitality design and development advisory led by Kavitha Iyer in Washington, DC. Strategic Architecture, interior design, feasibility, planning for portfolio CAPEX improvements, Property Improvement plans, evaluating market and property specific high ROI generating space redesign, FF&E, and project management for Hotels, Resorts, Cafes, Restaurants, and any spaces which would benefit from value-added long-term guest centric activation.">
+  <meta property="og:title" content="Design SAFAR — Hospitality Design & Development Advisory">
+  <meta property="og:description" content="Hospitality design and development advisory led by Kavitha Iyer in Washington, DC. Early hospitality planning, CAPEX and PIP advisory, feasibility analysis, FF&E procurement, hotel and restaurant interior design consulting, and project management for owners and developers.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.designsafar.com">
   <meta property="og:image" content="https://www.designsafar.com/images/SAFAR-kambikolam-socialpreview1280x640.png">
@@ -21,8 +21,8 @@
 
   <!-- ===== TWITTER / X CARD ===== -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Design SAFAR — For the Journey">
-  <meta name="twitter:description" content="Hospitality design advisory led by Kavitha Iyer in Washington, DC. Strategic interior design, FF&E, and project management for hotels and restaurants.">
+  <meta name="twitter:title" content="Design SAFAR — Hospitality Design & Development Advisory">
+  <meta name="twitter:description" content="Hospitality design and development advisory led by Kavitha Iyer in Washington, DC. Early hospitality planning, CAPEX & PIP advisory, FF&E procurement, and hotel design consulting for owners and developers.">
   <meta name="twitter:image" content="https://www.designsafar.com/images/SAFAR-kambikolam-socialpreview1280x640.png">
 
   <!-- ===== FAVICONS ===== -->
@@ -125,6 +125,7 @@
       --text-body: #4A4743;
       --text-muted: #8A8680;
       --accent-line: #C8B9A8;
+      --rose-deep: #B07F73; /* warm accent — hero only */
       --white: #FFFFFF;
     }
 
@@ -247,11 +248,30 @@
       text-align: center;
       padding: 120px 40px 80px;
       background: var(--cream);
+      position: relative;
+      overflow: hidden;
     }
+    /* faded, transparent floral hero overlay — dissolves into the cream on every edge (no hard outline) */
+    .hero-art { position: absolute; inset: 0; z-index: 0; }
+    .hero-art img { width: 100%; height: 100%; object-fit: cover; opacity: 0.16; filter: saturate(1.05);
+      -webkit-mask-image:
+        linear-gradient(to right, transparent 0, #000 180px, #000 calc(100% - 180px), transparent 100%),
+        linear-gradient(to bottom, transparent 0, #000 180px, #000 calc(100% - 180px), transparent 100%);
+      -webkit-mask-composite: source-in;
+      mask-image:
+        linear-gradient(to right, transparent 0, #000 180px, #000 calc(100% - 180px), transparent 100%),
+        linear-gradient(to bottom, transparent 0, #000 180px, #000 calc(100% - 180px), transparent 100%);
+      mask-composite: intersect; }
+    .hero > *:not(.hero-art) { position: relative; z-index: 1; }
+    /* compensate the 0.18em trailing tracking so SAFAR centres under the divider */
+    .hero-logo .safar-text { margin-right: -0.18em; }
+    .hero-contact em { font-style: italic; }
     .hero-logo {
       display: inline-block;
       text-align: left;
       margin-bottom: 40px;
+      font-size: inherit;
+      font-weight: inherit;
     }
     .hero-logo .design-text {
       font-family: 'Cormorant Garamond', serif;
@@ -272,6 +292,18 @@
       color: var(--charcoal);
       line-height: 1;
       display: block;
+    }
+    /* SEO-visible, visually hidden keyword text for search engines */
+    .seo-text {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
     }
     .hero-divider {
       width: clamp(300px, 50vw, 600px);
@@ -730,22 +762,25 @@
     "@graph": [
       {
         "@type": "WebSite",
+        "@id": "https://www.designsafar.com/#website",
         "name": "Design SAFAR",
         "url": "https://www.designsafar.com",
-        "description": "Hospitality design advisory — strategic interior design, FF&E, and project management."
+        "description": "Hospitality design and development advisory — early hospitality planning, CAPEX and PIP advisory, FF&E procurement, hotel and restaurant interior design consulting."
       },
       {
         "@type": "ProfessionalService",
         "name": "Design SAFAR",
+        "alternateName": "Design SAFAR Hospitality Advisory",
         "url": "https://www.designsafar.com",
         "logo": "https://www.designsafar.com/images/SAFAR-transparent-logo.png",
         "image": "https://www.designsafar.com/images/SAFAR-kambikolam-socialpreview1280x640.png",
-        "description": "Design SAFAR is a hospitality design advisory led by Kavitha Iyer, offering strategic interior design, FF&E procurement, and project management for hotels, restaurants, and commercial environments.",
+        "description": "Design SAFAR is a hospitality design and development advisory led by Kavitha Iyer. We provide early hospitality planning, CAPEX and PIP advisory, feasibility analysis, FF&E procurement, hotel and restaurant interior design consulting, and project management for hospitality owners and developers.",
         "founder": {
           "@type": "Person",
           "name": "Kavitha Iyer",
           "jobTitle": "Principal & Creative Director",
-          "image": "https://www.designsafar.com/images/kavitha-iyer.jpg"
+          "image": "https://www.designsafar.com/images/kavitha-iyer.jpg",
+          "description": "Architect, artist, and hospitality design consultant with over two decades of leadership in hospitality organizations."
         },
         "address": {
           "@type": "PostalAddress",
@@ -754,16 +789,44 @@
           "addressCountry": "US"
         },
         "areaServed": "United States",
-        "serviceType": ["Hospitality Interior Design", "FF&E Procurement", "Design Project Management", "Restaurant Design", "Hotel Design", "Commercial Interior Design"],
+        "serviceType": [
+          "Hospitality Design Consultant",
+          "Hospitality Development Advisory",
+          "Early Hospitality Planning",
+          "Hotel Design Consulting",
+          "CAPEX Planning and Advisory",
+          "Property Improvement Plan (PIP) Advisory",
+          "FF&E Procurement",
+          "Hotel Interior Design",
+          "Restaurant Design Consulting",
+          "Hospitality Feasibility Analysis",
+          "Hotel Repositioning Advisory",
+          "Resort Design Advisory",
+          "Commercial Interior Design",
+          "Design Project Management",
+          "Pre-Opening Design Direction"
+        ],
+        "knowsAbout": [
+          "Hospitality design",
+          "Hotel development",
+          "CAPEX planning",
+          "Property improvement plans",
+          "FF&E procurement",
+          "Hospitality feasibility",
+          "Interior architecture",
+          "Brand design partnerships",
+          "Guest experience design"
+        ],
         "email": "kavitha@designsafar.com",
+        "telephone": "+1-404-791-4305",
         "sameAs": []
       },
       {
         "@type": "WebPage",
         "@id": "https://www.designsafar.com/#webpage",
         "url": "https://www.designsafar.com",
-        "name": "Design SAFAR — Hospitality Design Advisory",
-        "description": "Strategic interior design, FF&E procurement, and project management for hospitality environments.",
+        "name": "Design SAFAR — Hospitality Design & Development Advisory",
+        "description": "Hospitality design and development advisory offering early planning, CAPEX and PIP advisory, FF&E procurement, and hotel and restaurant design consulting for owners and developers.",
         "isPartOf": { "@id": "https://www.designsafar.com/#website" }
       }
     ]
@@ -798,13 +861,15 @@
 
   <!-- ===== HERO ===== -->
   <section class="hero" id="hero">
-    <div class="hero-logo fade-up">
-      <div class="design-text">Design</div>
-      <div class="safar-text">SAFAR</div>
-    </div>
+    <div class="hero-art" aria-hidden="true"><img src="Art/Abstract-florals001.jpg" alt=""></div>
+    <h1 class="hero-logo fade-up">
+      <span class="design-text">Design</span>
+      <span class="safar-text">SAFAR</span>
+      <span class="seo-text">— Hospitality Design &amp; Development Advisory Consultant</span>
+    </h1>
     <div class="hero-divider fade-up"></div>
     <p class="hero-tagline fade-up">For the Journey</p>
-    <p class="hero-contact fade-up">Design and Development Advisory for<br>Places people feel, and Value owners trust.</p>
+    <p class="hero-contact fade-up">Hospitality design &amp; development advisory for<br>places people <em>feel</em>, and value owners <em>trust</em>.</p>
   </section>
 
   <!-- ===== ABOUT ===== -->
@@ -841,7 +906,7 @@
         <div class="approach-left">
           <div class="section-label fade-up" style="color:var(--taupe-light)">Approach</div>
           <div class="section-accent-line fade-up" style="background:var(--taupe)"></div>
-          <h2 class="fade-up">Design advisory for Hospitality environments</h2>
+          <h2 class="fade-up">Hospitality design and development advisory for owners and developers</h2>
           <p class="fade-up">We advise across every phase of development to shape places with depth, direction, and lasting impact. Grounded in listening, clarity, and purpose, we help navigate complexity, uncover high-value opportunities, and simplify the process.</p>
           <p class="philosophy fade-up">The SAFAR philosophy rests on disciplined decision-making to deliver an exceptional journey, for your guests, for you.</p>
           <h3 class="approach-subtitle fade-up">Our Approach</h3>
@@ -887,13 +952,13 @@
       <div class="services-grid">
         <!-- Early Clarity -->
         <div class="service-card fade-up">
-          <img src="images/early-clarity.jpg" alt="Early Clarity — strategic planning session" class="service-image">
+          <img src="images/early-clarity.jpg" alt="Early hospitality planning — feasibility, CAPEX, and PIP advisory" class="service-image">
           <div class="service-content">
             <h3 class="service-title">Early Clarity</h3>
             <ul class="service-list">
-              <li>Project feasibility analysis for site planning, phasing plan, and space planning.</li>
+              <li>Hospitality feasibility analysis for site planning, phasing plan, and space planning.</li>
               <li>Building tailored design narratives to support compelling deal strategy.</li>
-              <li>Repositioning, CAPEX, and PIP planning.</li>
+              <li>Hotel repositioning, CAPEX, and PIP planning advisory.</li>
               <li>Creative direction, concept development, and visualization to define design intent.</li>
               <li>Holistic cost estimation to build and operate.</li>
             </ul>
@@ -901,7 +966,7 @@
         </div>
         <!-- Cohesive Process -->
         <div class="service-card fade-up">
-          <img src="images/cohesive-process.jpg" alt="Cohesive Process — architectural blueprints" class="service-image">
+          <img src="images/cohesive-process.jpg" alt="Hospitality design project management — FF&E procurement and design consulting" class="service-image">
           <div class="service-content">
             <h3 class="service-title">Cohesive Process</h3>
             <ul class="service-list">
@@ -914,7 +979,7 @@
         </div>
         <!-- Market Confident -->
         <div class="service-card fade-up">
-          <img src="images/market-confident.jpg" alt="Market Confident — hospitality environment" class="service-image">
+          <img src="images/market-confident.jpg" alt="Hotel and restaurant design consulting — pre-opening and market positioning" class="service-image">
           <div class="service-content">
             <h3 class="service-title">Market Confident</h3>
             <ul class="service-list">
@@ -972,10 +1037,10 @@
 
   <!-- ===== FOOTER ===== -->
   <footer class="footer">
-    <p>&copy; 2026 Design SAFAR &nbsp;&middot;&nbsp; <a href="mailto:kavitha@designsafar.com">kavitha@designsafar.com</a> &nbsp;&middot;&nbsp; 404.791.4305</p>
+    <p>&copy; 2026 Design SAFAR &nbsp;&middot;&nbsp; <a href="/cdn-cgi/l/email-protection#a5cec4d3ccd1cdc4e5c1c0d6ccc2cbd6c4c3c4d78bc6cac8"><span class="__cf_email__" data-cfemail="7d161c0b1409151c3d19180e141a130e1c1b1c0f531e1210">[email&#160;protected]</span></a> &nbsp;&middot;&nbsp; 404.791.4305</p>
   </footer>
 
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     // Navbar scroll effect
     const nav = document.getElementById('nav');
     window.addEventListener('scroll', () => {
