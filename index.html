@@ -336,6 +336,27 @@
     }
     .hero-contact a { color: var(--taupe-dark); transition: color 0.3s; }
     .hero-contact a:hover { color: var(--charcoal); }
+    .hero-social {
+      display: flex;
+      gap: 28px;
+      margin-top: 36px;
+      align-items: center;
+      justify-content: center;
+    }
+    .social-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    .social-icon:hover {
+      opacity: 0.75;
+      transform: scale(1.1);
+    }
+    .social-icon img {
+      width: 36px;
+      height: 36px;
+    }
 
     /* ===== SECTION SHARED ===== */
     .section { padding: 100px 40px; }
@@ -819,7 +840,7 @@
         ],
         "email": "kavitha@designsafar.com",
         "telephone": "+1-404-791-4305",
-        "sameAs": []
+        "sameAs": ["https://www.linkedin.com/in/kriyer1/", "https://www.instagram.com/safar_kavi/"]
       },
       {
         "@type": "WebPage",
@@ -870,6 +891,11 @@
     <div class="hero-divider fade-up"></div>
     <p class="hero-tagline fade-up">For the Journey</p>
     <p class="hero-contact fade-up">Hospitality design &amp; development advisory for<br>places people <em>feel</em>, and value owners <em>trust</em>.</p>
+    <div class="hero-social fade-up">
+      <a href="mailto:kavitha@designsafar.com" aria-label="Email" class="social-icon"><img src="images/Email.svg" alt="Email" width="36" height="36"></a>
+      <a href="https://www.linkedin.com/in/kriyer1/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-icon"><img src="images/linkedin.svg" alt="LinkedIn" width="36" height="36"></a>
+      <a href="https://www.instagram.com/safar_kavi/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-icon"><img src="images/instagram.svg" alt="Instagram" width="36" height="36"></a>
+    </div>
   </section>
 
   <!-- ===== ABOUT ===== -->
