@@ -770,6 +770,32 @@
     }
     .footer a { color: var(--taupe-light); transition: color 0.3s; }
     .footer a:hover { color: var(--cream); }
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .footer-social {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+    .footer-social a {
+      display: flex;
+      align-items: center;
+      transition: opacity 0.3s ease;
+    }
+    .footer-social a:hover { opacity: 0.75; }
+    .footer-social img {
+      width: 22px;
+      height: 22px;
+      filter: brightness(0) invert(0.65);
+    }
+    .footer-social a:hover img {
+      filter: brightness(0) invert(0.9);
+    }
 
     /* ===== ANIMATIONS ===== */
     .fade-up {
@@ -1032,7 +1058,14 @@ If a piece stays with you, send me a note. </p>
 
   <!-- ===== FOOTER ===== -->
   <footer class="footer">
-    <p>&copy; 2026 Design SAFAR &nbsp;&middot;&nbsp; <a href="mailto:kavitha@designsafar.com">kavitha@designsafar.com</a> &nbsp;&middot;&nbsp; 404.791.4305</p>
+    <div class="footer-inner">
+      <p>&copy; 2026 Design SAFAR</p>
+      <div class="footer-social">
+        <a href="mailto:kavitha@designsafar.com" aria-label="Email"><img src="images/Email.svg" alt="Email"></a>
+        <a href="https://www.linkedin.com/in/kriyer1/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><img src="images/linkedin.svg" alt="LinkedIn"></a>
+        <a href="https://www.instagram.com/safar_kavi/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><img src="images/instagram.svg" alt="Instagram"></a>
+      </div>
+    </div>
   </footer>
 
   <script>
